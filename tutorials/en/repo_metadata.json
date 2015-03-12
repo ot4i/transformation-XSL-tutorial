@@ -43,7 +43,7 @@
           "name": "Transformation using XSLT",
           "version": "1.0",
           "iibVersions": "10.*-11.*",
-          "shortDesc": "Learn how to use an XML Transformation node to transform data using XSLT in a message flow.",
+          "shortDesc": "Learn how to use XSLT to transform data in a message flow.",
           "detailsURL": "http://bthomps.github.io/tutorialTransformationXSL/en/details.html",
           "stepsURL": "http://bthomps.github.io/tutorialTransformationXSL/en/steps.html",
           "zipURL": "http://bthomps.github.io/tutorialTransformationXSL/MQTTSubscribe/MQTTSubscribePI.zip",
