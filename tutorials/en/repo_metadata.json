@@ -40,12 +40,12 @@
           ]
         },
         {
-          "name": "Transform",
+          "name": "Transformation using XSLT",
           "version": "1.0",
           "iibVersions": "10.*-11.*",
-          "shortDesc": "Learn how to use an MQTTSubscribe node to receive data from MQTT.",
-          "detailsURL": "http://hosie.github.io/iib-tutorials/MQTTSubscribe/en/details.html",
-          "stepsURL": "http://hosie.github.io/iib-tutorials/MQTTSubscribe/en/steps.html",
+          "shortDesc": "Learn how to use an XML Transformation node to transform data using XSLT in a message flow.",
+          "detailsURL": "http://bthomps.github.io/tutorialTransformationXSL/en/details.html",
+          "stepsURL": "http://bthomps.github.io/tutorialTransformationXSL/en/steps.html",
           "zipURL": "http://hosie.github.io/iib-tutorials/MQTTSubscribe/MQTTSubscribePI.zip",
           "barFile": "<workspace>/MQTTSubscribe/MQTTSubscribe.bar",
           "visible": "true",
