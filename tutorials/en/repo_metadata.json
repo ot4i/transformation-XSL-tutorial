@@ -124,12 +124,12 @@
           ]
         },
         {
-          "name": "Transforming XSLT",
+          "name": "Transformation using XSLT",
           "version": "1.0",
           "iibVersions": "10.*-11.*",
-          "shortDesc": "Transforming XSLT",
-          "detailsURL": "http://bthomps.github.io/iib-tutorials/TransformationXSLT/en/details.html",
-          "stepsURL": "http://bthomps.github.io/iib-tutorials/TransformationXSLT/en/steps.html",
+          "shortDesc": "Learn how to use an XML Transformation node to transform data using XSLT in a message flow",
+          "detailsURL": "http://bthomps.github.io/tutorialTransformationXSL/en/details.html",
+          "stepsURL": "http://bthomps.github.io/tutorialTransformationXSL/en/steps.html"",
           "zipURL": "http://bthomps.github.io/iib-tutorials/TransformationXSLT/MQTTSubscribePI.zip",
           "barFile": "<workspace>/TransformationXSLT/MQTTSubscribe.bar",
           "visible": "true",
