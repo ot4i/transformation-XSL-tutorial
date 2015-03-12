@@ -46,24 +46,24 @@
           "shortDesc": "Learn how to use an XML Transformation node to transform data using XSLT in a message flow.",
           "detailsURL": "http://bthomps.github.io/tutorialTransformationXSL/en/details.html",
           "stepsURL": "http://bthomps.github.io/tutorialTransformationXSL/en/steps.html",
-          "zipURL": "http://hosie.github.io/iib-tutorials/MQTTSubscribe/MQTTSubscribePI.zip",
-          "barFile": "<workspace>/MQTTSubscribe/MQTTSubscribe.bar",
+          "zipURL": "http://bthomps.github.io/tutorialTransformationXSL/MQTTSubscribe/MQTTSubscribePI.zip",
+          "barFile": "<workspace>/Transformation_XSL/Transformation_XSL.bar",
           "visible": "true",
-          "tags": "service;http;soap;transformation",
+          "tags": "transformation;XSL;application",
           "isPattern": "false",
           "isFavorite": "true",
-          "projects": "MQTTSubscribe",
+          "projects": "Transformation_XSL",
           "editorResPaths": [
             {
               "id": "MainArtefact",
               "editor": "msgflow",
-              "wspath": "<workspace>/MQTTSubscribe/MQTTToFile.msgflow"
+              "wspath": "<workspace>/Transformation_XSL/Transformation_XSL.msgflow"
             }
           ],
           "deployedResources": [
             {
               "type": "application",
-              "path": "MQTTSubscribe"
+              "path": "Transformation_XSL"
             }
           ]
         }
