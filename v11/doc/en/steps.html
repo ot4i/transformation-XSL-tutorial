@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html class="no-js" lang="en">
  
 	
@@ -9,13 +7,14 @@
 		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
   		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
 		<meta http-equiv="Pragma" content="no-cache">
   		<meta http-equiv="Expires" content="-1">
-  		
 
 		<meta charset="UTF-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<meta name="copyright" content="Copyright IBM Corporation 2014" />
 		<meta name="abstract" content="IBM Integration Bus V10 Tutorial">
 		<meta name="author" content="IBM">
 		<meta name="description" content="IBM Integration Bus V10 Tutorial">
@@ -25,11 +24,13 @@
 		
 		<title>IBM Integration Bus V10 Tutorial</title>
 
-    	<link rel="stylesheet" href="../../css/main.css" />
+    	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
     	
-    	<script src="../../js/iibv10/json2.js"></script>
-    	<script src="../../js/iibv10/js2java.js"></script>
-  		<script src="../../js/vendor/modernizr.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
 <!-- body::Start -->
@@ -42,72 +43,50 @@
 	</div>
 	<div class="row">
 	  <div class="small-9 medium-9 large-9 columns">
-	    <h4>Transformation using XSL in a message flow</h4>
+	    <h4 class="title">Transformation using XSL in a message flow <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
-	  	<div class="row">
-	    	<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
-		</div>
+		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
 	  </div>
 	</div> 
 	<hr>
 	<div class="row">
-	  <div class="small-9 medium-10 large-10 columns">
-	    <h5> Learn how to use an XML Transformation node to transform data using an XML Stylesheet in an IBM Integration Bus message flow by exploring this simple example. </h5>
-	  </div>
-			<div class="small radius button right" id="backToGallery" onclick="backToGallery()"> Back To Gallery
-			</div>
+		<div class="small-10 medium-10 large-10 columns">
+		<h5> Learn how to use an XSL Transform node to transform data using XSL in an App Connect Enterprise message flow by exploring this simple example. </h5>
+		</div>
+		<div class="small-2 medium-2 large-2 columns">
+			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
+		</div>
 	</div>
-
 	<div class="row">          
 		  <div class="small-12 medium-12 large-12 columns">
 			<ul class="tabs vertical"> 
-				<li class="tab-title tab-title-small active"> 
-				  <a href="#panel11" onclick="show('panel11')">Overview</a>
+				<li class="tab-title tab-title-small active">
+				  <a href="javascript:;" onclick="show('panel21')">Create</a> 
 				</li>
 				<li class="tab-title tab-title-small">
-				  <a href="#panel21" onclick="show('panel21')">Create</a> 
+				  <a href="javascript:;" onclick="show('panel31')">Prepare</a> 
 				</li>
 				<li class="tab-title tab-title-small">
-				  <a href="#panel31" onclick="show('panel31')">Prepare</a> 
-				</li>
-				<li class="tab-title tab-title-small">
-				  <a href="#panel41" onclick="show('panel41')">Run</a> 
+				  <a href="javascript:;" onclick="show('panel41')">Run</a> 
 				</li>
 			</ul>
 			<!-- editing -->
 			<div class="tabs-content panel-thin-blue vertical"> 
-			    <div class="content active" id="panel11">
-			    	<div class="small-12 medium-12 large-12 columns">
-				    	<div class="row content-details">
-					      	<h4>Overview</h4>
-					        
-						    
-								<p> This tutorial demonstrates a simple message flow which receives XML data over HTTP. The flow transforms the input XML structure into a different output XML structure using an XML Transformation node (whose behavior is based on a stylesheet, and sends this back to the HTTP request. </p>
-							
-								<p> You will import the message flow to your Integration Toolkit workspace, deploy it to your default integration server, and invoke the message flow by using the Flow exerciser. </p>
-							
-						</div>
-							
-						<div class="row content-details">
-							<h4>Find out more</h4>
-							<ul>
-							
-								
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
-							
-							</ul>
-						</div>	
-							
-					</div>
-				</div>
-		    	<div class="content" id="panel21">
+		    	<div class="content active" id="panel21">
+		    		
 		    		<div class="small-10 medium-10 large-10 columns divider">
+					
 				      	<div class="row content-details">
-					      	<h4>Import projects</h4>
+					      	<h4>Import project</h4>
 					        
 						    
-								<p> The Transformation_XSL application includes one project that is imported into your workspace. </p>
+								<p> Click <span class="uicontrol">Import</span> and the <span class="uicontrol">Transformation_XSL</span> application will be imported into your workspace. </p>
+								
+							
+								<p> The <span class="uicontrol">Transformation_XSL</span> message flow will be opened for you. </p>
+								
 							
 						</div>
 						
@@ -116,67 +95,47 @@
 							<ul>
 							
 								
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions from scratch">Developing integration solutions from scratch</a> </li>
+							   	
 							
 							</ul>
 						</div>
 						
 					</div>
+					
 					<div class="small-2 medium-2 large-2 columns">
-					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="../../images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>						
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+										
 				    </div>
+					
 		    	</div>
 		    	<div class="content" id="panel31">
-		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+					<div class="small-12 medium-12 large-12 columns">
+					
 						<div class="row content-details">
-						  	<h4>Imported projects</h4>
+						  	<h4>Prepare an Integration Server</h4>
 						    
 						    
-								<p> The Transformation_XSL application is shown in the Application Development view of your workspace. </p>
-							
-								<p>  </p>
-							
-								<p> The application will be deployed to your default integration server. The message flow is then started and ready to be invoked. </p>
-							
-						</div>
-						
-						<div class="row content-details">
-							<h4>Find out more</h4>
-							<ul>
-							
-								
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
-							
-							</ul>
-						</div>
-							
-					</div>
-					<div class="small-2 medium-2 large-2 columns">
-						<h4 class="tkaction"><a href="javascript:;" onclick="deployArtifacts()"> Deploy <img class="icon-image" src="../../images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
-				    </div>
-		    	</div>
-		    	<div class="content" id="panel41">
-		    		<div class="small-10 medium-10 large-10 columns divider">
-				    	<div class="row content-details">
-					      	<h4>Follow these steps to complete the tutorial</h4>
-					        
-						    
-								<p> The Transformation_XSL application is shown in the Application Development view of your workspace. </p>
+								<p> Create an integration server and connect your App Connect Enterprise Toolkit: </p>
 								
 								
 									
 									<ol>
 									
 									
-										<li> Open the Transformation_XSL message flow, and click the Flow Exerciser icon to start recording the message path through the flow.
+										<li> Assuming you are using a Windows platform, open an App Connect Enterprise Command Console and start an integration server using the following command:<br><code>IntegrationServer --work-dir C:\TESTSERVER --name TESTSERVER --admin-rest-api 7600 --http-port-number 7800 --console-log</code> <br>where <b>C:\TESTSERVER</b> is a folder on your file system that the server will use for its working directory.
 										
 										</li>
 									
-										<li> Click the Send Message icon and create a new input message.
+										<li> In the App Connect Enterprise Toolkit Integration Explorer view, right click the folder <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/IntegrationServers.png" alt> and select the menu item  <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/ConnectToAnIntegrationServer.png" alt>. In the connection details panel, specify the <b>Host name</b> to be <b>localhost</b>, the <b>Port</b> to be <b>7600</b> and click Finish. This will connect your Toolkit and display the integration server that you started in the last step <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/TESTSERVER.png" alt>
 										
 										</li>
 									
-										<li> Choose Message1, edit the message data if you like, and click Send. Your request message is sent to the HTTP input node.
+										<li> Locate <b>Transformation_XSL.bar</b> inside the <b>Transformation_XSL</b> application in the Application Development view, and deploy it by dragging and dropping the BAR file on to the integration server in the Integration Explorer view.
 										
 										</li>
 									
@@ -185,23 +144,48 @@
 									
 								
 							
-								<p> After the request message is processed, the message path is automatically highlighted on the service description diagram. </p>
+						</div>
+						
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac12490_.htm')" title="Knowledge Center link to XSLTransform node">XSLTransform node</a> </li>
+							   	
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+		    	</div>
+		    	<div class="content" id="panel41">
+		    		
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+				    	<div class="row content-details">
+					      	<h4>Test the message flow to complete the tutorial</h4>
+					        
+						    
+								<p> Test the <b>Transformation_XSL</b> message flow by sending it data using an HTTP client such as cURL: </p>
 								
 								
 									
-									<ul>
+									<ol>
 									
 									
-										<li> Click on the highlighted operation to see the message path through the message flow.
+										<li> <code>cd C:\workspace</code><br> where <b>C:\workspace</b> is the location of your Toolkit Eclipse workspace directory on the filesystem.<br><code>curl -X POST http://localhost:7800/Transformation_XSL -d @.\Transformation_XSL\input.xml</code>
 										
 										</li>
 									
-										<li> You can click on any connection to see the data that passed through that connection. You can see that the request (input) message data has been transformed into a different response XML message.
+										<li> The transformed response message should look like this:<br><b>&lt;SaleEnvelope&gt;<br> &lt;SaleList&gt;<br>  &lt;Statement Style="Full" Type="Monthly"&gt;<br>   &lt;Customer&gt;<br>    &lt;Initials&gt;KA&lt;/Initials&gt;&lt;Name&gt;Braithwaite&lt;/Name&gt;&lt;Balance&gt;00.50&lt;/Balance&gt;<br>   &lt;/Customer&gt;<br>   &lt;Purchases&gt;<br>    &lt;Article&gt;&lt;Desc&gt;Twister&lt;/Desc&gt;&lt;Cost&gt;0.48&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;<br>    &lt;Article&gt;&lt;Desc&gt;The Times Newspaper&lt;/Desc&gt;&lt;Cost&gt;0.32&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;<br>   &lt;/Purchases&gt;<br>   &lt;Amount Currency="Sterling"&gt;0.8&lt;/Amount&gt;<br>  &lt;/Statement&gt;<br>  &lt;Statement Style="Full" Type="Monthly"&gt;<br>   &lt;Customer&gt;<br>    &lt;Initials&gt;TJ&lt;/Initials&gt;&lt;Name&gt;Dunnwin&lt;/Name&gt;&lt;Balance&gt;81.84&lt;/Balance&gt;<br>   &lt;/Customer&gt;<br>   &lt;Purchases&gt;<br>    &lt;Article&gt;&lt;Desc&gt;The Origin of Species&lt;/Desc&gt;&lt;Cost&gt;35.74&lt;/Cost&gt;&lt;Qty&gt;02&lt;/Qty&gt;&lt;/Article&gt;<br>    &lt;Article&gt;&lt;Desc&gt;Microscope&lt;/Desc&gt;&lt;Cost&gt;57.92&lt;/Cost&gt;&lt;Qty&gt;01&lt;/Qty&gt;&lt;/Article&gt;<br>   &lt;/Purchases&gt;<br>   &lt;Amount Currency="Euros"&gt;129.41&lt;/Amount&gt;<br>  &lt;/Statement&gt;<br> &lt;/SaleList&gt;<br>&lt;/SaleEnvelope&gt;</b>
 										
 										</li>
 									
 									
-									</ul>
+									</ol>
 									
 								
 							
@@ -212,25 +196,33 @@
 							<ul>
 							
 								
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
-							
-								
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/rt26110_.htm')" title="Knowledge Center link to Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac12490_.htm')" title="Knowledge Center link to XSLTransform node">XSLTransform node</a> </li>
+							   	
 							
 							</ul>
 						</div>
 							
 					</div>
+					
 					<div class="small-2 medium-2 large-2 columns">
-						<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()"> Clean up<img class="icon-image" src="../../images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+					
+					
+					
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
+				    
+					
 				    </div>
+					
 				</div>	
 			</div> <!-- tab-content -->
 		</div> <!-- columns -->
 	  </div> <!-- row --></body>
-		<script src="../../js/vendor/jquery.js"></script>
-		<script src="../../js/vendor/foundation.min.js"></script>
-		<script src="../../js/main.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/main.js"></script>
 	</body>
 <!-- body::End -->
 
